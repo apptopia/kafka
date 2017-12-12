@@ -177,6 +177,9 @@ public class Selector implements Selectable {
         boolean connected;
         try {
             connected = socketChannel.connect(address);
+            while (!connected) {
+                connected = socketChannel.finishConnect();
+            }
         } catch (UnresolvedAddressException e) {
             socketChannel.close();
             throw new IOException("Can't resolve address: " + address, e);

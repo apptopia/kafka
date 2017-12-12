@@ -163,7 +163,7 @@ public class SslFactory implements Configurable {
         } else {
             sslEngine.setUseClientMode(true);
             SSLParameters sslParams = sslEngine.getSSLParameters();
-            sslParams.setEndpointIdentificationAlgorithm(endpointIdentification);
+//            sslParams.setEndpointIdentificationAlgorithm(endpointIdentification);
             sslEngine.setSSLParameters(sslParams);
         }
         return sslEngine;
